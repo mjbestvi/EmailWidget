@@ -1,0 +1,16 @@
+<div class="auto-complete">
+  <label for="{{name}}">{{displayName}}:</label>
+  <input name="{{name}}" [value]="emails" (input)="searchEmails($event.target.value)" (keyup)="handleKeyInput($event.keyCode)" #searchField />
+  <div class="suggestions" >
+    <a class="suggestion" 
+      href="javascript:void(0);" 
+      title="{{suggestion.email}}"
+      *ngFor="let suggestion of suggestions; let i = index"
+      (click)="addSuggestion(suggestion)" 
+      (keyup)="suggestionKeyUp($event, suggestion, i)"
+      #suggestionLink
+    >
+      {{suggestion.firstName}} {{suggestion.lastName}}
+    </a>
+  </div>
+</div>

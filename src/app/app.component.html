@@ -1,0 +1,23 @@
+<div class="email-component">
+  <h1>
+    Send Email
+  </h1>
+
+  <div class="email-fields">
+    <span class="success" [style.display]="showSuccess ? 'block' : 'none'">Email Submitted Successfully!</span>
+    <ul [style.display]="showError ? 'block' : 'none'">
+      <li class="error" *ngFor="let errorMessage of errorMessages" >{{errorMessage}}</li>
+    </ul>
+
+    <auto-complete [name]="'to'" [displayName]="'To'" [multiSelect]="false" #to ></auto-complete> 
+    <auto-complete [name]="'cc'" [displayName]="'CC'" [multiSelect]="true" #cc ></auto-complete> 
+
+    <label for="subject">Subject:</label>
+    <input name="subject" type="text" [value]="subject" (input)="subject=$event.target.value" />
+
+    <label for="body">Body:</label>
+    <textarea name="body" type="text" [value]="body" (input)="body=$event.target.value"></textarea>
+
+    <button (click)=sendEmail()>Submit</button>
+  </div>
+</div>

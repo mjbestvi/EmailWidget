@@ -1,0 +1,29 @@
+.email-component{
+    margin-left: 100px;
+}
+
+.email-fields{
+    display: inline-grid;
+    width: 500px;
+}
+
+.email-fields label{
+    width: 100%;
+}
+
+.email-fields input, .email-fields textarea{
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.email-fields textarea{
+    height: 300px;
+}
+
+.success{
+    color: green;
+}
+
+.error{
+    color: red;
+}
